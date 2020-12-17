@@ -10,21 +10,22 @@ namespace TravelDiary.Models
     // public Image Photo {get;set;}
     // public Image image {get;set;}
     public int Id {get;}
-    public static List<Place> _instances = new List<Place>{};
-    public Place(string cityName)
+    private static List<Place> _instances = new List<Place>{};
+    public Place(string cityName, string description)
     {
       CityName = cityName;
+      Description = description;
       _instances.Add(this);
       Id = _instances.Count;
 
     }
 
-    public Place(string cityName, string description)
-    : this(cityName)
-    {
-      Description = description;
+    // public Place(string cityName, string description)
+    // : this(cityName)
+    // {
+    //   Description = description;
 
-    }
+    // }
     // public Place(string cityName, string description, Image photo)
     // : this(cityName, description)
     // {

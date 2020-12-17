@@ -1,5 +1,8 @@
 @using TravelDiary.Models;
-<h3><a href="/">Back To Home</a></h3>
+@{
+  Layout = "_Layout";
+}
+
 <h1>Travel Log:</h1>
 @if(@Model.Count == 0)
 {
@@ -9,17 +12,16 @@
 @foreach(Place place in Model)
 {
   
-      @if(@place.Description != null)
-      {
-          <li><a href="/places/@place.Id">@place.CityName</a></li>
-      }
-      else
-      {
-          <li>@place.CityName</li>
-      }
+    @if(@place.Description != null)
+    {
+        <li><a href="/places/@place.Id">@place.CityName</a></li>
+    }
+    else
+    {
+        <li>@place.CityName</li>
+    }
 
   
 }
 </ul>
 
-<h3><a href="/places/new">Add Somewhere Perambulated</a></h3>
